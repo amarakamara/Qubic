@@ -2,6 +2,9 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import SectionTitle from "./SectionTitle";
 import WorkContent from "./WorkContent";
+import web1Image from "../assets/web-1.jpg";
+import web2Image from "../assets/web-2.jpg";
+import web3Image from "../assets/web-3.png";
 
 export default function Work() {
   const workRef = useRef(null);
@@ -24,28 +27,28 @@ export default function Work() {
       link: "",
       description:
         "This is a placeholder. We are working to update our real projects soon",
-      image: "src/assets/web-1.jpg",
+      image: web1Image,
     },
     {
       title: "Website XYZ2",
       link: "",
       description:
         "This is a placeholder. We are working to update our real projects soon",
-      image: "src/assets/web-2.jpg",
+      image: web2Image,
     },
     {
       title: "Website XYZ3",
       link: "",
       description:
         "This is a placeholder. We are working to update our real projects soon",
-      image: "src/assets/web-3.png",
+      image: web3Image,
     },
     {
       title: "Website XYZ4",
       link: "",
       description:
         "This is a placeholder. We are working to update our real projects soon",
-      image: "src/assets/web-1.jpg",
+      image: web1Image,
     },
   ];
   return (
