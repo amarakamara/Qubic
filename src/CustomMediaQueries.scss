@@ -1,0 +1,235 @@
+/* Mixin for Image Styling */
+@mixin imageStyling($b, $l, $s) {
+  bottom: $b;
+  left: $l;
+  transform: scale($s);
+}
+
+@mixin sectionPadding($t, $lr) {
+  padding: $t 0 $lr;
+}
+
+@mixin largeScreen {
+  @include sectionPadding(12rem, 2rem);
+}
+
+@mixin mediumScreen {
+  @include sectionPadding(12rem, 2rem);
+}
+
+@mixin smallScreen {
+  @include sectionPadding(8rem, 2rem);
+}
+
+/* Extra Small Devices (xs) */
+@media (min-width: 200px) {
+  .sleeky,
+  .lab {
+    font-size: 7rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 2.3);
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  section {
+    @include smallScreen;
+  }
+}
+
+/* Custom breakpoint between xs and sm */
+@media (min-width: 412px) {
+  .sleeky,
+  .lab {
+    font-size: 8.5rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.8);
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  section {
+    @include smallScreen;
+  }
+}
+
+/* Custom breakpoint between xs and sm */
+@media (min-width: 540px) {
+  .sleeky,
+  .lab {
+    font-size: 12rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.8);
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  section {
+    @include smallScreen;
+  }
+}
+
+/* Small Devices (sm) */
+@media (min-width: 640px) {
+  .sleeky,
+  .lab {
+    font-size: 16rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.8);
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  section {
+    @include mediumScreen;
+  }
+}
+
+/* Custom breakpoint between sm and md */
+@media (min-width: 853px) {
+  .sleeky,
+  .lab {
+    font-size: 16rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.8);
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  section {
+    @include mediumScreen;
+  }
+}
+
+/* Medium Devices (md) */
+@media (min-width: 768px) {
+  .sleeky,
+  .lab {
+    font-size: 16rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.8);
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  section {
+    @include mediumScreen;
+  }
+}
+
+/* Custom breakpoint between md and lg */
+@media (min-width: 912px) {
+  .sleeky,
+  .lab {
+    font-size: 20rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.8);
+  }
+  .hero p {
+    font-size: 1.2rem;
+  }
+  section {
+    @include largeScreen;
+  }
+}
+
+/* Large Devices (lg) */
+@media (min-width: 1024px) {
+  .sleeky,
+  .lab {
+    font-size: 12rem;
+    text-align: left;
+  }
+  .sleeky {
+    text-align: right;
+  }
+  .hero-img {
+    @include imageStyling(-31%, 22%, 1);
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  section {
+    @include largeScreen;
+  }
+}
+
+/* Extra Large Devices (xl) */
+@media (min-width: 1280px) {
+  .sleeky,
+  .lab {
+    font-size: 16rem;
+    text-align: left;
+  }
+  .sleeky {
+    text-align: right;
+  }
+  .hero-img {
+    @include imageStyling(-31%, 22%, 1.2);
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  section {
+    @include largeScreen;
+  }
+}
+
+/* 2XL Devices (2xl) */
+@media (min-width: 1536px) {
+  .sleeky,
+  .lab {
+    font-size: 17rem;
+    text-align: left;
+  }
+  .sleeky {
+    text-align: right;
+  }
+  section {
+    @include largeScreen;
+  }
+}
+
+/* 3XL Devices (3xl) */
+@media (min-width: 1920px) {
+  .sleeky,
+  .lab {
+    font-size: 18rem;
+    text-align: left;
+  }
+  .sleeky {
+    text-align: right;
+  }
+  section {
+    @include largeScreen;
+  }
+}
+
+/* 4XL Devices (4xl) */
+@media (min-width: 2560px) {
+  .sleeky,
+  .lab {
+    font-size: 20rem;
+    text-align: left;
+  }
+  .sleeky {
+    text-align: right;
+  }
+  section {
+    @include largeScreen;
+  }
+}

@@ -1,0 +1,31 @@
+/* Style the select box */
+select {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 0.5px solid #fff;
+  padding: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  pointer-events: none;
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+select option {
+  background-color: #fff;
+  color: #333;
+}
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}

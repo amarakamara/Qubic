@@ -1,0 +1,20 @@
+.marquee {
+  transform: translate3d(0%, 0, 0);
+  animation: marquee 57s linear infinite;
+  img {
+    height: 120px;
+  }
+}
+.marquee-wrapper:hover .marquee {
+  animation-play-state: paused !important;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
