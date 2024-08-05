@@ -14,7 +14,7 @@ export default function ChooseUs() {
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-  });
+  }); 
 
   const opacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
   const y = useTransform(smoothProgress, [0, 0.4], [100, 0]);

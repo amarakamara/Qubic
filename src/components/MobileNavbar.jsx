@@ -12,7 +12,7 @@ export default function MobileNavbar(props) {
   };
 
   return (
-    <div className="top-0 right-0 w-full h-screen min-h-screen bg-white bg-opacity-95 p-[20px] z-50 overflow-hidden sticky">
+    <div className="top-0 right-0 w-full h-screen min-h-screen bg-white bg-opacity-95 p-[20px] z-50 overflow-hidden fixed">
       <div className="w-full flex justify-end">
         <button className="" onClick={handleClick}>
           close
