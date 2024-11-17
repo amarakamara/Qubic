@@ -33,31 +33,26 @@ export default function Hero() {
       id="home"
       className="hero mt-[30px] py-10 relative w-full overflow-hidden"
     >
-      <motion.img
-        variants={itemsVariants}
-        src={HeroImage}
-        className="hero-img absolute w-auto h-auto grayscale z-10"
-      />
       <motion.div
         variants={itemsVariants}
         className="w-full flex justify-between"
       >
-        <p className="p-1 w-2/3 lg:w-1/3 md:w-1/2   font-thin">
+        <p className="p-1 w-2/3 lg:w-1/3 md:w-1/2 font-thin">
           Congratulations, you’re now interacting with an agency that will
           change the way customers see your business.
         </p>
       </motion.div>
       <motion.div variants={itemsVariants} className="w-full flex flex-col">
-        <h1 className="header-1 font-black sleeky  lg:whitespace-nowrap leading-none ">
-          MODZZY
+        <h1 className="header-1 font-black qubic  lg:whitespace-nowrap leading-none ">
+          QUBIC
         </h1>
-        <h1 className="header-2 font-black lab  leading-none">STUDIOS</h1>
+        <h1 className="header-2 font-black studios  leading-none">STUDIO</h1>
       </motion.div>
       <motion.div
         variants={itemsVariants}
         className="w-full flex justify-between relative bottom-0 mt-20 z-20"
       >
-        <p className=" p-2 w-1/2 lg:w-1/3 md:w-1/2 font-thin">
+        <p className="p-2 w-1/2 lg:w-1/3 md:w-1/2 font-thin">
           Great services that would take your business to another height. Don’t
           miss out! Start growing with us.
         </p>

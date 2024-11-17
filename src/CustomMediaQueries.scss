@@ -23,15 +23,22 @@
 
 /* Extra Small Devices (xs) */
 @media (min-width: 200px) {
-  .sleeky,
-  .lab {
-    font-size: 7rem;
+  .studios {
+    font-size: 5rem;
+    text-align: center;
+  }
+  .qubic {
+    font-size: 6rem;
     text-align: center;
   }
   .hero-img {
     @include imageStyling(0, 0, 2.3);
   }
-  .hero p {
+  .hero .p-1 {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+  .hero .p-2 {
     font-size: 0.8rem;
   }
   section {
@@ -41,13 +48,35 @@
 
 /* Custom breakpoint between xs and sm */
 @media (min-width: 412px) {
-  .sleeky,
-  .lab {
-    font-size: 8.5rem;
+  .studios {
+    font-size: 5.7rem;
+    text-align: center;
+  }
+  .qubic {
+    font-size: 6.5rem;
     text-align: center;
   }
   .hero-img {
-    @include imageStyling(0, 0, 1.8);
+    @include imageStyling(0, 0, 1.5);
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  section {
+    @include smallScreen;
+  }
+}
+@media (min-width: 500px) and (max-width: 540px) {
+  .studios {
+    font-size: 6.8rem;
+    text-align: center;
+  }
+  .qubic {
+    font-size: 8rem;
+    text-align: center;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.5);
   }
   .hero p {
     font-size: 0.8rem;
@@ -58,14 +87,17 @@
 }
 
 /* Custom breakpoint between xs and sm */
-@media (min-width: 540px) {
-  .sleeky,
-  .lab {
-    font-size: 12rem;
+@media (min-width: 548px) {
+  .studios {
+    font-size: 7.5rem;
+    text-align: center;
+  }
+  .qubic {
+    font-size: 9rem;
     text-align: center;
   }
   .hero-img {
-    @include imageStyling(0, 0, 1.8);
+    @include imageStyling(0, 0, 1.5);
   }
   .hero p {
     font-size: 0.8rem;
@@ -75,15 +107,40 @@
   }
 }
 
-/* Small Devices (sm) */
-@media (min-width: 640px) {
-  .sleeky,
-  .lab {
-    font-size: 16rem;
-    text-align: center;
+@media (min-width: 540px) and (max-width: 547px) {
+  .studios {
+    font-size: 7.3rem;
+  }
+  .qubic {
+    font-size: 8.5rem;
+  }
+}
+
+@media (min-width: 615px) and (max-width: 640px) {
+  .studios {
+    font-size: 8.5rem;
+  }
+  .qubic {
+    font-size: 10rem;
   }
   .hero-img {
-    @include imageStyling(0, 0, 1.8);
+    @include imageStyling(0, 0, 1.2);
+  }
+}
+
+/* Small Devices (sm) */
+@media (min-width: 640px) {
+  .studios {
+    font-size: 8.5rem;
+    text-align: center;
+  }
+  .qubic {
+    font-size: 10rem;
+    text-align: center;
+  }
+
+  .hero-img {
+    @include imageStyling(0, 0, 1.4);
   }
   .hero p {
     font-size: 1rem;
@@ -93,15 +150,34 @@
   }
 }
 
-/* Custom breakpoint between sm and md */
-@media (min-width: 853px) {
-  .sleeky,
-  .lab {
-    font-size: 16rem;
-    text-align: center;
+@media (min-width: 646px) and (max-width: 768px) {
+  .studios {
+    font-size: 9rem;
+  }
+  .qubic {
+    font-size: 10.5rem;
   }
   .hero-img {
-    @include imageStyling(0, 0, 1.8);
+    @include imageStyling(0, 0, 1.2);
+  }
+}
+
+@media (min-width: 730px) and (max-width: 768px) {
+  .hero-img {
+    @include imageStyling(0, 0, 1);
+  }
+}
+
+/* Medium Devices (md) */
+@media (min-width: 768px) {
+  .studios {
+    font-size: 10.5rem;
+  }
+  .qubic {
+    font-size: 13rem;
+  }
+  .hero-img {
+    @include imageStyling(0, 0, 1.1);
   }
   .hero p {
     font-size: 1.2rem;
@@ -111,15 +187,16 @@
   }
 }
 
-/* Medium Devices (md) */
-@media (min-width: 768px) {
-  .sleeky,
-  .lab {
-    font-size: 16rem;
-    text-align: center;
+/* Custom breakpoint between sm and md */
+@media (min-width: 853px) {
+  .studios {
+    font-size: 11.5rem;
+  }
+  .qubic {
+    font-size: 13rem;
   }
   .hero-img {
-    @include imageStyling(0, 0, 1.8);
+    @include imageStyling(0, 0, 1);
   }
   .hero p {
     font-size: 1.2rem;
@@ -130,14 +207,17 @@
 }
 
 /* Custom breakpoint between md and lg */
-@media (min-width: 912px) {
-  .sleeky,
-  .lab {
-    font-size: 20rem;
+@media (min-width: 912px) and (max-width: 1024px) {
+  .studios {
+    font-size: 13rem;
+    text-align: center;
+  }
+  .qubic {
+    font-size: 15rem;
     text-align: center;
   }
   .hero-img {
-    @include imageStyling(0, 0, 1.8);
+    @include imageStyling(0, 0, 1);
   }
   .hero p {
     font-size: 1.2rem;
@@ -149,19 +229,19 @@
 
 /* Large Devices (lg) */
 @media (min-width: 1024px) {
-  .sleeky,
-  .lab {
-    font-size: 12rem;
+  .qubic,
+  .studios {
+    font-size: 15rem;
     text-align: left;
   }
-  .sleeky {
+  .qubic {
     text-align: right;
   }
   .hero-img {
     @include imageStyling(-31%, 22%, 1);
   }
-  .hero p {
-    font-size: 0.8rem;
+  .hero .p-1 .p-2 {
+    font-size: 20rem;
   }
   section {
     @include largeScreen;
@@ -170,12 +250,12 @@
 
 /* Extra Large Devices (xl) */
 @media (min-width: 1280px) {
-  .sleeky,
-  .lab {
+  .qubic,
+  .studios {
     font-size: 16rem;
     text-align: left;
   }
-  .sleeky {
+  .qubic {
     text-align: right;
   }
   .hero-img {
@@ -191,12 +271,12 @@
 
 /* 2XL Devices (2xl) */
 @media (min-width: 1536px) {
-  .sleeky,
-  .lab {
+  .qubic,
+  .studios {
     font-size: 17rem;
     text-align: left;
   }
-  .sleeky {
+  .qubic {
     text-align: right;
   }
   section {
@@ -206,12 +286,12 @@
 
 /* 3XL Devices (3xl) */
 @media (min-width: 1920px) {
-  .sleeky,
-  .lab {
+  .qubic,
+  .studios {
     font-size: 18rem;
     text-align: left;
   }
-  .sleeky {
+  .qubic {
     text-align: right;
   }
   section {
@@ -221,12 +301,12 @@
 
 /* 4XL Devices (4xl) */
 @media (min-width: 2560px) {
-  .sleeky,
-  .lab {
+  .qubic,
+  .studios {
     font-size: 20rem;
     text-align: left;
   }
-  .sleeky {
+  .qubic {
     text-align: right;
   }
   section {

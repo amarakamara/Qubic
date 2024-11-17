@@ -15,7 +15,7 @@ export default function Calendar(props) {
           close
         </button>
       </div>
-      <InlineWidget url="https://calendly.com/modzzystudios/30min" />
+      <InlineWidget url="https://calendly.com/qubicstudio/30min"/>
     </div>
   );
 }
