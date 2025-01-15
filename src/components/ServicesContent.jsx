@@ -8,10 +8,8 @@ export default function ServicesContent(props) {
   };
   return (
     <div className="w-full flex flex-col md:flex-row lg:flex-row border-[0.5px] border-black">
-      <div className="w-full md:w-1/2 lg:w-1/2 bg-black text-white flex items-center text-center p-6">
-        <h2 className="text-[2.2rem] lg:text-[3.5rem] font-black">
-          {props.title}
-        </h2>
+      <div className="w-full md:w-1/2 lg:w-1/2 bg-black text-white flex justify-center items-center text-center p-6">
+        <h2 className="text-4xl font-black">{props.title}</h2>
       </div>
       <div className="w-full md:w-1/2 lg:w-1/2 text-black px-4 py-6 text-justify">
         <p>{props.content}</p>

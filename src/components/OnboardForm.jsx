@@ -14,11 +14,11 @@ export default function OnboardForm(props) {
     phone: "",
     socials: "",
     website: "",
+    crm: "",
     customer: "",
     address: "",
     services: "",
     timezone: "",
-    submitted: false,
   });
 
   const handleSubmit = async (e) => {
@@ -170,6 +170,21 @@ export default function OnboardForm(props) {
             onChange={handleChange}
           />
         </div>
+        <div className="my-3 text-left">
+          <label htmlFor="website" className="block">
+            Do you use any CRM(customer relationship management) software (if
+            you have one)
+          </label>
+          <input
+            type="text"
+            value={formData.crm}
+            name="crm"
+            placeholder="CRM software"
+            className="w-full px-1 border-b-[0.5px] border-black text-[1rem]"
+            id="website"
+            onChange={handleChange}
+          />
+        </div>
 
         <div className="my-3 text-left">
           <label htmlFor="customer" className="block">
@@ -234,30 +249,6 @@ export default function OnboardForm(props) {
           />
         </div>
 
-        <button type="button" className="bg-black my-3 py-2 text-white w-full">
-          Google Drive Folder
-        </button>
-        <p className="font-thin text-xs my-3">
-          Please use the Google Drive link above to upload all creative assets
-          i.e photos, staff headshots, videos, or previous work you've done.
-          Don't forget to include your logo.
-        </p>
-
-        <div className="flex w-full justify-start items-center my-3">
-          <input
-            required
-            type="checkbox"
-            checked={formData.submitted}
-            name="submitted"
-            className=""
-            id="submitted"
-            onChange={handleChange}
-          />
-          <label htmlFor="submitted" className="ml-2">
-            I have submitted
-          </label>
-        </div>
-
         <div className="my-3 text-left">
           <label htmlFor="message" className="block">
             Anything else we should know?
@@ -275,7 +266,7 @@ export default function OnboardForm(props) {
         <button
           type="submit"
           value="Send"
-          className="w-full text-xl bg-black text-white border py-2 px-6"
+          className="w-full text-xl bg-black text-white border py-2 px-6 rounded-md"
         >
           Submit
         </button>

@@ -9,13 +9,13 @@ export default function Calendar(props) {
   };
 
   return (
-    <div className="w-full h-full bg-white bg-opacity-95 p-[20px] overflow-hidden z-50 fixed">
+    <div className="w-full h-full bg-white bg-opacity-95 pb-96 overflow-hidden z-50 fixed">
       <div className="w-full flex justify-end">
         <button className="pr-10" onClick={handleClick}>
           close
         </button>
       </div>
-      <InlineWidget url="https://calendly.com/qubicstudio/30min"/>
+      <InlineWidget url="https://calendly.com/qubicstudio/15min" />
     </div>
   );
 }

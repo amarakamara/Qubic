@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import StoryImage from "../assets/story-image.png";
+import StoryImage from "../assets/story-image.jpeg";
 import SectionTitle from "./SectionTitle";
-
+import ImageFrame from "./ImageFrame";
 export default function Story() {
   const storyRef = useRef(null);
 
@@ -26,7 +26,7 @@ export default function Story() {
       }}
       ref={storyRef}
       id="story"
-      className="section w-full h-auto min-h-screen overflow-clip flex flex-col relative"
+      className="section my-20 px-6 w-full h-auto min-h-screen overflow-clip flex flex-col relative"
     >
       <div>
         <SectionTitle
@@ -39,17 +39,17 @@ export default function Story() {
           mb="mb-10"
           name="OUR STORY"
         />
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row justify-between py-14 lg:py-24">
           <motion.div
             style={{ opacity, y }}
             transition={{
-              delay: 0.6,
-              duration: 0.6,
+              delay: 0.7,
+              duration: 0.7,
               ease: "easeInOut",
             }}
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-1/2 text-center flex flex-row justify-center items-center"
           >
-            <img className="scale-x-[-1]" src={StoryImage} alt="robot" />
+            <ImageFrame imageSrc={StoryImage} altText="Intelligent Shape" />
           </motion.div>
           <motion.div
             style={{ opacity, y }}
@@ -58,19 +58,16 @@ export default function Story() {
               duration: 0.7,
               ease: "easeInOut",
             }}
-            className="w-full lg:w-1/2 text-justify flex flex-col gap-6 justify-center text-3xl pr-0 lg:pr-4 md:pr-2"
+            className="w-full  lg:w-1/2 text-justify flex flex-col gap-6 px-0 lg:px-20 justify-center items-center text-3xl"
           >
-            <p className="font-bold text-center lg:text-justify">
-              Lame online presence? We fix that.
+            <p className="font-bold self-center lg:self-start">
+              Starting Small, Thinking Big:
             </p>
-            <p className="px-4 lg:px-0">
-              As digital experts with years of experience, we craft innovative
-              strategies & designs. And targeted campaigns deliver results. We
-              collaborate, not dictate. We unlock your brand's story & goals,
-              then build a plan to make you shine online.
-            </p>
-            <p className="font-bold text-center lg:text-justify">
-              Ready to ignite? Let's go!
+            <p>
+              At QubicPro AI, we’re passionate about empowering service-based
+              businesses with cutting-edge AI solutions. Our mission is to
+              streamline operations, enhance customer experiences, and drive
+              efficiency for your business.
             </p>
           </motion.div>
         </div>

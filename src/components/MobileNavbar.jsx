@@ -29,12 +29,7 @@ export default function MobileNavbar(props) {
           <li>
             <a href="#services">Services</a>
           </li>
-          <li>
-            <a href="#work">Our Work</a>
-          </li>
-          <li>
-            <a href="#testimonial">Testimonial</a>
-          </li>
+
           <li onClick={handleOpenQuote}>
             <a href="#">Contact</a>
           </li>

@@ -20,7 +20,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="w-full h-18 navbar py-4 px-2 sticky top-0 z-40 bg-glossy">
+    <div className="w-full h-18 navbar py-4 px-4 sticky top-0 z-40 bg-glossy">
       <nav className="w-full h-full flex flex-row justify-center items-center">
         <div className="w-full flex justify-between h-auto">
           <div className="w-auto">
@@ -35,12 +35,6 @@ export default function Navbar(props) {
             </li>
             <li>
               <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#work">Our Work</a>
-            </li>
-            <li>
-              <a href="#testimonial">Testimonial</a>
             </li>
             <li onClick={handleOpenQuote}>
               <a href="#">Contact</a>

@@ -9,7 +9,7 @@ export default function ProcessContent(props) {
         </h2>
       </div>
       <div className="w-3/4 p-6 border border-y-0 border-r-0 border-l-[0.5] border-black">
-        <h3 className="whitespace-nowrap my-2 font-bold text-[1.2rem] lg:text-[1.7rem]">
+        <h3 className="text-wrap my-2 font-bold text-[1.6rem] lg:text-[1.7rem] leading-tight">
           {props.title}
         </h3>
         <p className="font-thin text-base">{props.content}</p>

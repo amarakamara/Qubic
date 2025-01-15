@@ -1,17 +1,13 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import SectionTitle from "./SectionTitle";
-import htmlLogo from "../assets/html-logo.png";
-import cssLogo from "../assets/css-logo.png";
-import jsLogo from "../assets/js-logo.png";
-import nextLogo from "../assets/next-logo.png";
-import reactLogo from "../assets/react-logo.png";
-import figmaLogo from "../assets/figma-logo.png";
-import webflowLogo from "../assets/webflow-logo.png";
 import zapierLogo from "../assets/zapier-logo.png";
 import botpressLogo from "../assets/botpress-logo.png";
 import makeLogo from "../assets/make-logo.png";
-import framerLogo from "../assets/framer-logo.png";
+import vapiLogo from "../assets/vapi-logo.jpg";
+import openAiLogo from "../assets/openai-logo.png";
+import retellLogo from "../assets/retell-logo.png";
+import pythonLogo from "../assets/python-logo.png";
 
 export default function Tools() {
   const toolRef = useRef(null);
@@ -30,17 +26,13 @@ export default function Tools() {
   const y = useTransform(smoothProgress, [0, 0.4], [60, 0]);
 
   const logos = [
-    { src: htmlLogo, alt: "Logo company 1" },
-    { src: cssLogo, alt: "Logo company 2" },
-    { src: jsLogo, alt: "Logo company 3" },
-    { src: nextLogo, alt: "Logo company 4" },
-    { src: reactLogo, alt: "Logo company 5" },
-    { src: figmaLogo, alt: "Logo company 5" },
-    { src: webflowLogo, alt: "Logo company 6" },
-    { src: zapierLogo, alt: "Logo company 7" },
-    { src: botpressLogo, alt: "Logo company 7" },
-    { src: makeLogo, alt: "Logo company 7" },
-    { src: framerLogo, alt: "Logo company 7" },
+    { src: pythonLogo, alt: "python logo" },
+    { src: retellLogo, alt: "retell ai logo" },
+    { src: vapiLogo, alt: "vapi logo" },
+    { src: openAiLogo, alt: "open ai logo" },
+    { src: zapierLogo, alt: "zapier logo" },
+    { src: botpressLogo, alt: "botpress logo" },
+    { src: makeLogo, alt: "make.com logo" },
   ];
   return (
     <motion.section
@@ -49,7 +41,7 @@ export default function Tools() {
       }}
       ref={toolRef}
       id="partners"
-      className="section relative w-full flex flex-col px-2"
+      className="section relative w-full flex flex-col px-2 py-20"
     >
       <SectionTitle
         style={{ opacity, y }}
@@ -62,7 +54,7 @@ export default function Tools() {
         name="TOOLS"
       />
 
-      <motion.div className=" w-full flex justify-center flex-wrap text-3xl">
+      <motion.div className="w-full flex justify-center flex-wrap text-3xl">
         {logos.map((image, index) => {
           return (
             <motion.div
@@ -76,7 +68,7 @@ export default function Tools() {
                   duration: 0.6,
                   ease: "easeInOut",
                 }}
-                className="inline-block whitespace-nowrap px-6 h-[100px] lg:h-[120px] md:h-[110px] p-4"
+                className="inline-block px-6 h-[100px] lg:h-[120px] md:h-[110px] p-4 object-contain"
                 src={image.src}
                 alt={image.alt}
               />

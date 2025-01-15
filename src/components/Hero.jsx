@@ -1,9 +1,8 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import Button from "./Button";
-import HeroImage from "../assets/hero-image.png";
-import Marquee from "./Marquee";
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import HeroImage from "../assets/hero-image.png";
+import Button from "./Button";
 
 const sectionContainerVariant = {
   hidden: { opacity: 0, y: 100 },
@@ -24,53 +23,63 @@ const itemsVariants = {
   show: { opacity: 1 },
 };
 
-export default function Hero() {
+export default function Hero(props) {
+  const { setShowQuote, setShowCalendar } = props;
+
+  const handleOpenCalendar = () => {
+    setShowCalendar(true);
+  };
+  const handleOpenQuote = () => {
+    setShowQuote(true);
+  };
   return (
     <motion.section
       variants={sectionContainerVariant}
       initial="hidden"
       animate="show"
       id="home"
-      className="hero mt-[30px] py-10 relative w-full overflow-hidden"
+      className="px-4 pb-20  relative w-full overflow-hidden"
     >
       <motion.div
         variants={itemsVariants}
-        className="w-full flex justify-between"
+        className="relative w-full flex flex-col lg:flex-row items-center mt-10"
       >
-        <p className="p-1 w-2/3 lg:w-1/3 md:w-1/2 font-thin">
-          Congratulations, you’re now interacting with an agency that will
-          change the way customers see your business.
-        </p>
-      </motion.div>
-      <motion.div variants={itemsVariants} className="w-full flex flex-col">
-        <h1 className="header-1 font-black qubic  lg:whitespace-nowrap leading-none ">
-          QUBIC
-        </h1>
-        <h1 className="header-2 font-black studios  leading-none">STUDIO</h1>
-      </motion.div>
-      <motion.div
-        variants={itemsVariants}
-        className="w-full flex justify-between relative bottom-0 mt-20 z-20"
-      >
-        <p className="p-2 w-1/2 lg:w-1/3 md:w-1/2 font-thin">
-          Great services that would take your business to another height. Don’t
-          miss out! Start growing with us.
-        </p>
-        <div className="w-auto h-auto z-20">
-          <ul className="flex w-full h-auto justify-end gap-5 bg-glossy p-2 rounded ">
-            <li>
-              <Facebook />
-            </li>
-            <li>
-              <Twitter />
-            </li>
-            <li>
-              <Linkedin />
-            </li>
-            <li>
-              <Instagram />
-            </li>
-          </ul>
+        <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center lg:justify-start lg:items-start  lg:relative lg:top-auto lg:left-auto lg:w-auto lg:h-auto">
+          <img
+            src={HeroImage}
+            alt="AI Powered Service"
+            className="lg:w-[40rem] lg:h-[40rem] object-cover lg:object-none opacity-20 lg:opacity-100 relative left-0"
+          />
+        </div>
+        <div className="relative z-10 text-center lg:text-left flex-1 flex flex-col justify-center bg-opacity-80">
+          <p className="py-4 font-thin mb-6 max-w-lg mx-auto lg:mx-0">
+            Effortless Operations and Customer Care for Service-Based
+            Businesses—Powered by AI.
+          </p>
+          <h1 className="text-5xl flex flex-col lg:text-6xl font-black leading-tight">
+            Let AI Handle Routine Tasks—So You Can Focus on Growth
+          </h1>
+          <p className="py-4 font-thin my-6 max-w-lg mx-auto lg:mx-0">
+            AI Solutions for Service Businesses: Streamline processes, enhance
+            customer experiences, and scale effortlessly.
+          </p>
+
+          <div className="flex flex-row space-x-4 justify-center lg:justify-start">
+            <Button
+              onClick={handleOpenQuote}
+              borderColor="border-black"
+              name="Start Automating Now"
+              width="w-fit"
+              height="h-auto"
+            />
+
+            <Button
+              onClick={handleOpenCalendar}
+              borderColor="border-black"
+              name="Free Consultation"
+              height="h-auto"
+            />
+          </div>
         </div>
       </motion.div>
     </motion.section>

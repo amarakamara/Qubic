@@ -22,39 +22,38 @@ export default function Services(props) {
 
   const services = [
     {
-      title: "CREATIVE WEB DESIGN",
+      title: "AI VOICE AGENTS",
       content:
-        "We craft exceptional digital experiences through strategic design solutions, combining creativity, technical expertise, and a deep understanding of your unique needs.",
+        "Revolutionize customer interactions with AI-powered voice agents that:",
       bullets: [
-        "User-Centered Design",
-        " Visual Excellence",
-        "UX Optimization",
-        "Responsive Design",
-        "Branding & Identity",
+        "Ensure 24/7 availability for your business",
+        "Handle inbound and outbound calls efficiently",
+        "Automate appointment booking, reminders, and follow-ups",
+        "Provide personalized customer interactions",
+        "Customizable to suit your business needs",
       ],
     },
     {
-      title: "WEB DEVELOPMENT",
-      content:
-        "We build robust and scalable digital solutions through cutting-edge web development, combining technical expertise, innovation, and a deep understanding of your unique needs.",
+      title: "AI CHATBOTS",
+      content: "Provide instant responses to customers, even after hours",
       bullets: [
-        "Front-end Development",
-        "Back-end Development",
-        "CMS Integration",
-        "E-commerce Solutions",
-        "Quality Assurance",
+        "Automate FAQs about services and pricing",
+        "Collect customer details for follow-up scheduling",
+        "Integrates seamlessly with your website or social media",
+        "Instant Customer Support",
+        "Customizable Chatbot Solutions",
       ],
     },
     {
-      title: "AI CHATBOT & AUTOMATION",
-      content:
-        "We build robust and scalable automation solutions, combining AI expertise, innovation, and a deep understanding of your unique needs.",
+      title: "CONSULTATION",
+      content: "Not sure where to start with AI? Let us guide you",
       bullets: [
-        "AI Chatbot Development",
-        "Workflow Automation",
-        "Botpres Solutions",
-        "Zapier and Make.com Integrations",
-        "Automation Strategy",
+        "Identify the best automation opportunities for your business",
+        "Plan tailored AI workflows to maximize efficiency",
+        "AI Strategy Development",
+        "Business Process Optimization",
+        "Custom AI Workflows",
+        "Performance & ROI Analysis",
       ],
     },
   ];
@@ -66,7 +65,7 @@ export default function Services(props) {
       transition={{
         staggerChildren: 0.25,
       }}
-      className="section relative w-full overflow-clip flex flex-col"
+      className="section relative w-full overflow-clip flex flex-col my-20"
     >
       <SectionTitle
         style={{ opacity, y }}
@@ -85,12 +84,13 @@ export default function Services(props) {
           duration: 0.6,
           ease: "easeInOut",
         }}
-        className=" w-full flex justify-center items-center lg:px-20 mb-10"
+        className="w-full flex justify-center items-center lg:px-20 mb-10"
       >
         <motion.p className="px-4 lg:px-20 text-center">
-          We offers a comprehensive suite of digital services to elevate your
-          brand's online presence and drive success. It’s all about you. What
-          you want? And What your brand should reflect.
+          Our AI-powered solutions are designed to tackle real challenges faced
+          by service-based businesses. From automating bookings to handling
+          customer inquiries, our services save you time and boost operational
+          efficiency.
         </motion.p>
       </motion.div>
       <motion.div

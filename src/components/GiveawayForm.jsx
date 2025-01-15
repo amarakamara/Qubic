@@ -20,6 +20,7 @@ export default function GiveawayForm() {
     phone: "",
     socials: "",
     website: "",
+    crm: "",
     address: "",
     services: "",
   });
@@ -170,8 +171,23 @@ export default function GiveawayForm() {
           />
         </div>
         <div className="my-3 text-left">
+          <label htmlFor="website" className="block">
+            Do you use any CRM(customer relationship management) software (if
+            you have one)
+          </label>
+          <input
+            type="text"
+            value={formData.crm}
+            name="crm"
+            placeholder="CRM software"
+            className="w-full px-1 border-b-[0.5px] border-black text-[1rem]"
+            id="website"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="my-3 text-left">
           <label htmlFor="services" className="block">
-            What is your organization into?{" "}
+            What is your business or organization into?{" "}
             <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -218,7 +234,7 @@ export default function GiveawayForm() {
         <button
           type="submit"
           value="Send"
-          className="w-full text-xl bg-black text-white border py-2 px-6"
+          className="w-full text-xl bg-black text-white border py-2 px-6 rounded-md"
         >
           Submit
         </button>

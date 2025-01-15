@@ -23,23 +23,24 @@ export default function Process() {
   const process = [
     {
       number: 1,
-      title: "Discovery & Strategy",
+      title: "Understanding Your Needs",
       content:
-        "We listen, ask questions, and develop a customized plan that defines project scope, timelines, and deliverables.",
+        "We begin by understanding your business operations and challenges, identifying areas where AI can enhance efficiency and customer care.",
     },
     {
       number: 2,
-      title: "Design & Development",
+      title: "Custom AI Development",
       content:
-        "Our designers and developers craft intuitive, visually stunning experiences that resonate with your audience.",
+        "Our team designs and develops AI-powered solutions tailored to your specific requirements, ensuring seamless integration with your existing systems.",
     },
     {
       number: 3,
-      title: "Launch & Evolution",
+      title: "Deployment & Optimization",
       content:
-        "We deploy your solution, ensure a smooth transition, and to continuously improve your digital presence.",
+        "We implement your AI solution with minimal disruption, monitor its performance, and optimize it to adapt to your evolving needs.",
     },
   ];
+
   return (
     <motion.section
       id="process"
@@ -59,8 +60,8 @@ export default function Process() {
         mb="mb-10"
         name="PROCESS"
       />
-      <motion.div className="flex flex-col lg:flex-row">
-        <motion.div className="w-full lg:w-1/2">
+      <motion.div className="flex flex-col lg:flex-row py-14 lg:py-24">
+        <motion.div className="w-full lg:w-1/2 flex flex-row justify-center items-center mb-10 lg:mb-0">
           <motion.img
             style={{ opacity, y }}
             transition={{
@@ -70,6 +71,7 @@ export default function Process() {
             }}
             src={ProcessImage}
             alt="robot"
+            className="object-contain w-80 lg:w-96"
           />
         </motion.div>
         <motion.div

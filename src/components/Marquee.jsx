@@ -1,15 +1,11 @@
 import React from "react";
-import htmlLogo from "../assets/html-logo.png";
-import cssLogo from "../assets/css-logo.png";
-import jsLogo from "../assets/js-logo.png";
-import nextLogo from "../assets/next-logo.png";
-import reactLogo from "../assets/react-logo.png";
-import figmaLogo from "../assets/figma-logo.png";
-import webflowLogo from "../assets/webflow-logo.png";
+import vapiLogo from "../assets/vapi-logo.jpg";
+import openAiLogo from "../assets/openai-logo.png";
 import zapierLogo from "../assets/zapier-logo.png";
 import botpressLogo from "../assets/botpress-logo.png";
 import makeLogo from "../assets/make-logo.png";
-import framerLogo from "../assets/framer-logo.png";
+import retellLogo from "../assets/retell-logo.png";
+import pythonLogo from "../assets/python-logo.png";
 
 const Marquee = () => {
   const content = [
@@ -18,17 +14,12 @@ const Marquee = () => {
     "Announcement 3: Check out our latest blog post.",
   ];
   const logos = [
-    { src: htmlLogo, alt: "Logo company 1" },
-    { src: cssLogo, alt: "Logo company 2" },
-    { src: jsLogo, alt: "Logo company 3" },
-    { src: nextLogo, alt: "Logo company 4" },
-    { src: reactLogo, alt: "Logo company 5" },
-    { src: figmaLogo, alt: "Logo company 5" },
-    { src: webflowLogo, alt: "Logo company 6" },
-    { src: zapierLogo, alt: "Logo company 7" },
-    { src: botpressLogo, alt: "Logo company 7" },
-    { src: makeLogo, alt: "Logo company 7" },
-    { src: framerLogo, alt: "Logo company 7" },
+    { src: retellLogo, alt: "retell ai logo" },
+    { src: vapiLogo, alt: "vapi logo" },
+    { src: openAiLogo, alt: "open ai logo" },
+    { src: zapierLogo, alt: "zapier logo" },
+    { src: botpressLogo, alt: "botpress logo" },
+    { src: makeLogo, alt: "make.com logo" },
   ];
 
   return (

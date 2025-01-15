@@ -1,23 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import Navbar from "../components/Navbar.jsx";
-import Story from "../components/Story.jsx";
-import Process from "../components/Process.jsx";
-import Services from "../components/Services.jsx";
 import MobileNavbar from "../components/MobileNavbar.jsx";
-import ChooseUs from "../components/ChooseUs";
-import Work from "../components/Work";
-import CTA from "../components/CTA";
-import Hero from "../components/Hero";
-import Testimonial from "../components/Testimonial";
-import Marquee from "../components/Marquee";
-import Tools from "../components/Tools";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import Calendar from "../components/Calendar";
-import PopUp from "../components/PopUp";
-import QuoteForm from "../components/QuoteForm";
-import Cursor from "../components/Cursor";
 import "../App.scss";
+import LoadingSpinner from "../components/LoadingSpinner";
+
+const Story = React.lazy(() => import("../components/Story.jsx"));
+const Process = React.lazy(() => import("../components/Process.jsx"));
+const Services = React.lazy(() => import("../components/Services.jsx"));
+const YourWhy = React.lazy(() => import("../components/YourWhy"));
+const CaseStudy = React.lazy(() => import("../components/CaseStudy"));
+const CTA = React.lazy(() => import("../components/CTA"));
+const Hero = React.lazy(() => import("../components/Hero"));
+const Tools = React.lazy(() => import("../components/Tools"));
+const Team = React.lazy(() => import("../components/Team"));
+const Contact = React.lazy(() => import("../components/Contact"));
+const Footer = React.lazy(() => import("../components/Footer"));
+const Calendar = React.lazy(() => import("../components/Calendar"));
+const PopUp = React.lazy(() => import("../components/PopUp"));
+const QuoteForm = React.lazy(() => import("../components/QuoteForm"));
+const Cursor = React.lazy(() => import("../components/Cursor"));
 
 function App() {
   const [showNav, setShowNav] = useState(false);
@@ -43,34 +44,38 @@ function App() {
         setShowCalendar={setShowCalendar}
       />
       <div className="w-screen h-full relative overflow-x-hidden overflow-y-scroll no-scrollbar">
-        <Cursor />
-        {showQuote && (
-          <QuoteForm
+        <Suspense fallback={<LoadingSpinner />}>
+          <Cursor />
+          {showQuote && (
+            <QuoteForm
+              setShowPopUp={setShowPopUp}
+              setPopUpMessage={setPopUpMessage}
+              setShowQuote={setShowQuote}
+            />
+          )}
+          {showPopUp && <PopUp message={popUpMessage} />}
+          {showCalendar && <Calendar setShowCalendar={setShowCalendar} />}
+          {showNav && (
+            <MobileNavbar setShowQuote={setShowQuote} setShowNav={setShowNav} />
+          )}
+          <Hero setShowQuote={setShowQuote} setShowCalendar={setShowCalendar} />
+          <Story />
+          <Services setShowQuote={setShowQuote} />
+          <YourWhy />
+          <Process />
+          {/* Optional Components */}
+          {/* <Work /> */}
+          {/* <Testimonial /> */}
+          <CaseStudy />
+          <CTA setShowQuote={setShowQuote} />
+          <Team />
+          <Tools />
+          <Contact
             setShowPopUp={setShowPopUp}
             setPopUpMessage={setPopUpMessage}
-            setShowQuote={setShowQuote}
           />
-        )}
-        {showPopUp && <PopUp message={popUpMessage} />}
-        {showCalendar && <Calendar setShowCalendar={setShowCalendar} />}
-        {showNav && (
-          <MobileNavbar setShowQuote={setShowQuote} setShowNav={setShowNav} />
-        )}
-        <Hero />
-        <Marquee />
-        <Story />
-        <Services setShowQuote={setShowQuote} />
-        <ChooseUs />
-        <Process />
-        <CTA setShowQuote={setShowQuote} />
-        <Work />
-        <Testimonial />
-        <Tools />
-        <Contact
-          setShowPopUp={setShowPopUp}
-          setPopUpMessage={setPopUpMessage}
-        />
-        <Footer />
+          <Footer />
+        </Suspense>
       </div>
     </>
   );

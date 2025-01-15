@@ -72,10 +72,10 @@ export default function QuoteForm(props) {
 
   return (
     <div className="fixed w-screen lg:w-7/12 h-screen flex flex-col pt-4 bg-white text-black border shadow-sm z-50 px-4 right-0">
-      <div className="text-right  border-b-[0.1px] mb-10 pb-2">
+      <div className="text-right border-b-[0.1px] mb-10 pb-2">
         <button onClick={handleClick}>close</button>
       </div>
-      <div className=" overflow-y-scroll">
+      <div className="overflow-y-scroll">
         <p className="my-3 text-sm">
           Let's get aligned! We want to make sure we're the right fit for your
           project. Please review the details below and submit our 'Getting
@@ -88,7 +88,7 @@ export default function QuoteForm(props) {
         </p>
         <form
           onSubmit={handleSubmit}
-          className="onboard-form w-full h-full justify-center text-center my-8  pb-96"
+          className="onboard-form w-full h-full justify-center text-center my-8 pb-96"
         >
           <div className="flex w-full gap-2 my-3">
             <div className="w-1/2 text-left">
@@ -101,7 +101,7 @@ export default function QuoteForm(props) {
                 value={formData.name}
                 name="name"
                 placeholder="Type here"
-                className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+                className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
                 id="name"
                 onChange={handleChange}
               />
@@ -116,7 +116,7 @@ export default function QuoteForm(props) {
                 name="email"
                 value={formData.email}
                 placeholder="Type Here"
-                className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+                className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
                 id="email"
                 onChange={handleChange}
               />
@@ -133,7 +133,7 @@ export default function QuoteForm(props) {
               value={formData.companyname}
               name="companyname"
               placeholder="Type Here"
-              className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+              className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
               id="companyname"
               onChange={handleChange}
             />
@@ -149,14 +149,14 @@ export default function QuoteForm(props) {
               <input
                 className="w-4 h-4 text-black"
                 type="radio"
-                id="website"
+                id="voice-agent"
                 name="projecttype"
-                value="website"
-                checked={formData.projecttype === "website"}
+                value="voice-agent"
+                checked={formData.projecttype === "voice-agent"}
                 onChange={handleChange}
               />
-              <label className="text-8xl" htmlFor="website">
-                WEBSITE
+              <label className="text-8xl" htmlFor="voice-agent">
+                AI VOICE AGENTS
               </label>
               <input
                 className="w-4 h-4 text-black"
@@ -168,7 +168,19 @@ export default function QuoteForm(props) {
                 onChange={handleChange}
               />
               <label className="text-8xl" htmlFor="chatbot">
-                AI CHATBOT INTEGRATION
+                AI CHATBOTS
+              </label>
+              <input
+                className="w-4 h-4 text-black"
+                type="radio"
+                id="consultation"
+                name="projecttype"
+                value="consultation"
+                checked={formData.projecttype === "consultation"}
+                onChange={handleChange}
+              />
+              <label className="text-8xl" htmlFor="consultation">
+                CONSULTATION
               </label>
             </div>
           </div>
@@ -179,11 +191,11 @@ export default function QuoteForm(props) {
             </label>
             <textarea
               required
-              className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+              className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
               id="projectdescription"
               name="projectdescription"
               placeholder="Type here"
-              value={formData.projectdescriptiom}
+              value={formData.projectdescription}
               onChange={handleChange}
             ></textarea>
           </div>
@@ -194,10 +206,10 @@ export default function QuoteForm(props) {
                 Budget Expectation <span className="text-red-500">*</span>
               </label>
               <select
-                className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+                className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
                 name="budgetExpectation"
                 id="budgetExpectation"
-                value={formData.projectExpectation}
+                value={formData.budgetExpectation}
                 onChange={handleChange}
               >
                 <option value="" disabled>
@@ -219,7 +231,7 @@ export default function QuoteForm(props) {
                 value={formData.timelineExpectation}
                 name="timelineExpectation"
                 placeholder="Type here"
-                className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+                className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
                 id="timelineExpectation"
                 onChange={handleChange}
               />
@@ -237,7 +249,7 @@ export default function QuoteForm(props) {
                 value={formData.howDidYouFindUs}
                 name="howDidYouFindUs"
                 placeholder="Type here"
-                className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+                className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
                 id="howDidYouFindUs"
                 onChange={handleChange}
               />
@@ -251,7 +263,7 @@ export default function QuoteForm(props) {
                 name="favoriteDrink"
                 value={formData.favoriteDrink}
                 placeholder="Type Here"
-                className="w-full  px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
+                className="w-full px-1 py-2 bg-transparent border-b-[0.2px] border-black text-[1rem]"
                 id="favoriteDrink"
                 onChange={handleChange}
               />
@@ -261,7 +273,7 @@ export default function QuoteForm(props) {
           <button
             type="submit"
             value="Send"
-            className="w-full text-xl bg-black text-white my-4 border py-2 px-6"
+            className="w-full text-xl bg-black text-white mt-4 mb-24 border py-2 px-6"
           >
             Submit
           </button>

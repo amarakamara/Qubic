@@ -38,15 +38,16 @@ export default function CTA(props) {
             duration: 0.6,
             ease: "easeInOut",
           }}
-          className="font-black text-[2.3rem] lg:text-[5rem] md:text-[4rem]"
+          className="font-black text-[2rem] lg:text-[3rem] md:text-[2rem]"
         >
-          “READY TO GIVE YOUR BUSINESS A NEW LOOK?”
+          Curious how AI can transform your customer experience? Let’s discuss
+          and build solutions together!
         </motion.h1>
         <Button
           onClick={handleOpenQuote}
           borderColor="border-black"
-          name="Quick Contact"
-          width="w-52"
+          name="Boost Your Bookings Today"
+          width="w-fit"
           height="h-auto"
         />
       </motion.div>

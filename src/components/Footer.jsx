@@ -11,12 +11,13 @@ export default function Footer() {
       <div className="w-full lg:w-1/2 md:w-full ">
         <img className="w-40 mb-4 " src={WhiteLogo} alt="logo" />
         <p className="pr-0 lg:pr-20 md:pr-14 text-justify">
-          We're a squad of young, innovative, and fearless creators ready to
-          supercharge your business with our top-notch web design and
-          development services! We're all about crafting digital experiences
-          that drive results and leave a lasting impact. Our team is obsessed
-          with staying ahead of the curve and pushing boundaries to deliver
-          exceptional solutions that meet your unique needs.
+          We are a dynamic team of forward-thinking innovators, passionate about
+          revolutionizing your business through cutting-edge AI automation
+          solutions. Specializing in AI voice agents, chatbots, and expert
+          consultation, we help service-based businesses streamline their
+          customer care processes and enhance efficiency. Our mission is to
+          deliver smart, tailored automation that not only meets your unique
+          needs but also drives tangible results and sets your business apart.
         </p>
       </div>
       <div className="w-full lg:w-1/2 md:w-full flex flex-col lg:flex-row md:flex-row gap-4">
@@ -33,9 +34,6 @@ export default function Footer() {
               Services
             </motion.li>
             <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
-              Portfolio
-            </motion.li>
-            <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
               Contact
             </motion.li>
           </ul>
@@ -43,11 +41,21 @@ export default function Footer() {
         <div className="w-full">
           <h3 className=" mb-4 text-2xl font-black">Services</h3>
           <ul className="">
-            <li>Web Design</li>
-            <li>Web Development</li>
-            <li>Landing Page Design</li>
-            <li>SEO</li>
-            <li>Domain Transfer</li>
+            <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+              AI Voice Agents
+            </motion.li>
+            <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+              AI Chatbots
+            </motion.li>
+            <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+              AI Automation Consulting
+            </motion.li>
+            <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+              Custom Automation Workflows
+            </motion.li>
+            <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
+              Customer Care Automation
+            </motion.li>
           </ul>
         </div>
       </div>
