@@ -1,20 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   theme: {
     extend: {
-      scale: {
-        150: "1.5",
-        200: "2",
-        300: "3",
+      fontFamily: {
+        heading: ["Changa One", "serif"],
+        body: ["Changa", "sans-serif"],
       },
-      screens: {
-        xs: "480px",
-        "3xl": "1920px",
-        "4xl": "2560px",
-        "2xl": "1536px",
-        xlg: "1200px",
-        "2md": "820px",
+      colors: {
+        primary: "#000000",
+        secondary: "#ffffff",
       },
     },
   },
