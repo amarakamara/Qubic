@@ -6,17 +6,17 @@ import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 
 export default function Contact(props) {
-  const { setShowPopUp, setPopUpMessage } = props;
   const contactRef = useRef(null);
 
-  const scrollYProgress = useScroll({
+  const { scrollYProgress } = useScroll({
     target: contactRef,
     offset: ["start end", "end end"],
-  }).scrollYProgress;
+  });
 
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
+    restDelta: 0.001,
   });
 
   const opacity = useTransform(smoothProgress, [0, 0.4], [0, 1]);
@@ -52,10 +52,7 @@ export default function Contact(props) {
             }}
             className="w-full"
           >
-            <ContactForm
-              setShowPopUp={setShowPopUp}
-              setPopUpMessage={setPopUpMessage}
-            />
+            <ContactForm />
           </motion.div>
           <motion.div
             style={{ opacity, y }}
@@ -66,7 +63,9 @@ export default function Contact(props) {
             }}
             className="w-full flex flex-col gap-6 text-xl"
           >
-            <p>info@marketwavesmedia.com</p>
+            <p>
+              <a href="mailto:info@qubicpro.online">info@qubicpro.online</a>
+            </p>
             <ul className="flex w-full h-auto justify-start gap-5">
               <motion.li whileTap={{ scale: 0.9 }} whileHover={{ scale: 1.1 }}>
                 <Facebook />

@@ -12,14 +12,14 @@ export default function MobileNavbar(props) {
   };
 
   return (
-    <div className="top-0 right-0 w-full h-screen min-h-screen bg-white bg-opacity-95 p-[20px] z-50 overflow-hidden fixed">
+    <div className="top-0 right-0 w-full h-screen min-h-screen bg-white bg-opacity-95 p-[20px] z-40 overflow-hidden fixed">
       <div className="w-full flex justify-end">
         <button className="" onClick={handleClick}>
           close
         </button>
       </div>
       <nav className="w-full h-full flex flex-col justify-center items-center">
-        <ul className="mobilenav w-1/2 flex flex-col">
+        <ul className="mobilenav w-full flex flex-col">
           <li>
             <a href="#home">Home</a>
           </li>
@@ -31,7 +31,7 @@ export default function MobileNavbar(props) {
           </li>
 
           <li onClick={handleOpenQuote}>
-            <a href="#">Contact</a>
+            <a href="#">Book a Consultation</a>
           </li>
         </ul>
         <ul className="flex w-1/2 h-auto justify-center gap-5 mt-10">

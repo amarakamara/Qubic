@@ -9,7 +9,7 @@ export default function SectionTitle(props) {
       <motion.h1
         style={props.style}
         transition={props.transition}
-        className="font-black text-[2rem] lg:text-[9rem] md:text-[6.5rem] whitespace-nowrap"
+        className="font-black text-[2rem] lg:text-[7rem] md:text-[6.5rem] whitespace-nowrap"
       >
         {props.name}
       </motion.h1>

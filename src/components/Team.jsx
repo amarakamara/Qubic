@@ -40,7 +40,7 @@ export default function TeamSection() {
   return (
     <motion.section
       ref={teamRef}
-      className="section relative my-20 px-6 w-full min-h-screen overflow-hidden flex flex-col"
+      className="section relative my-20 px-2 w-full min-h-screen overflow-hidden flex flex-col"
     >
       <SectionTitle
         style={{ opacity, y }}

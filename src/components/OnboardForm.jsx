@@ -2,9 +2,28 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BlackLogo from "../assets/blacklogo.png";
 
+const formUrl = import.meta.env.VITE_URL3;
+
 export default function OnboardForm(props) {
-  const { setShowPopUp, setPopUpMessage } = props;
   const navigate = useNavigate();
+
+  const initialFormState = {
+    name: "",
+    companyname: "",
+    email: "",
+    message: "",
+    phone: "",
+    socials: "",
+    website: "",
+    crm: "",
+    customer: "",
+    address: "",
+    services: "",
+    timezone: "",
+  };
+
+  const [showPopup, setShowPopup] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,26 +42,51 @@ export default function OnboardForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      ...formData,
+
+    const body = {
+      sheet1: {
+        name: formData.name,
+        company: formData.companyname,
+        email: formData.email,
+        message: formData.message,
+        phone: formData.phone,
+        socials: formData.socials,
+        website: formData.website,
+        crm: formData.crm,
+        customer: formData.customer,
+        address: formData.address,
+        service: formData.services,
+        timezone: formData.timezone,
+      },
     };
+
     try {
-      await fetch(
-        "https://hook.eu2.make.com/bf7marzwsfn9rskcskx1kq6dwbyodw47",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-      setPopUpMessage("Message Sent");
-      setShowPopUp(true);
+      const response = await fetch(formUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData(initialFormState);
+      } else {
+        setIsSuccess(false);
+      }
+
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
     } catch (error) {
       console.error(error);
-      setPopUpMessage("Failed");
-      setShowPopUp(true);
+      setIsSuccess(false);
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
     }
   };
 
@@ -56,12 +100,25 @@ export default function OnboardForm(props) {
   };
 
   return (
-    <div className="w-full px-2 md:w-5/6 md:px-0 lg:px-0 lg:w-1/2 h-auto flex flex-col rounded py-10">
-      <div className="w-full flex justify-center mb-10">
-        <img className="w-40" src={BlackLogo} alt="logo" />
+    <div className="w-full md:w-5/6 md:px-0 lg:px-0 lg:w-1/2 h-auto flex flex-col rounded pb-10">
+      <div className="w-full flex flex-col justify-center mb-10 sticky top-0 z-10 bg-white py-5">
+        <div className="flex justify-center py-2">
+          <img className="w-40" src={BlackLogo} alt="logo" />
+        </div>
+        {showPopup && (
+          <div
+            className={`text-sm px-4 py-2 rounded text-center text-white ${
+              isSuccess ? "bg-black" : "bg-red-500"
+            }`}
+          >
+            {isSuccess
+              ? "Message sent successfully!"
+              : "Failed to send message"}
+          </div>
+        )}
       </div>
       <form
-        className="onboard-form w-full h-full justify-center text-center border px-6 py-10"
+        className="onboard-form w-full h-full justify-center text-center  px-6 pb-10"
         onSubmit={handleSubmit}
       >
         <h1 className="font-black text-[2rem] my-3">Let's get started</h1>
@@ -145,7 +202,6 @@ export default function OnboardForm(props) {
             comma) <span className="text-red-500">*</span>
           </label>
           <input
-            required
             type="text"
             value={formData.socials}
             name="socials"

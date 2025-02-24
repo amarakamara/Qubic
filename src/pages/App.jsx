@@ -16,25 +16,13 @@ const Team = React.lazy(() => import("../components/Team"));
 const Contact = React.lazy(() => import("../components/Contact"));
 const Footer = React.lazy(() => import("../components/Footer"));
 const Calendar = React.lazy(() => import("../components/Calendar"));
-const PopUp = React.lazy(() => import("../components/PopUp"));
 const QuoteForm = React.lazy(() => import("../components/QuoteForm"));
 const Cursor = React.lazy(() => import("../components/Cursor"));
 
 function App() {
   const [showNav, setShowNav] = useState(false);
   const [showCalendar, setShowCalendar] = useState(false);
-  const [showPopUp, setShowPopUp] = useState(false);
-  const [popUpMessage, setPopUpMessage] = useState("");
   const [showQuote, setShowQuote] = useState(false);
-
-  useEffect(() => {
-    if (showPopUp) {
-      const timer = setTimeout(() => {
-        setShowPopUp(false);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [showPopUp]);
 
   return (
     <>
@@ -46,14 +34,7 @@ function App() {
       <div className="w-screen h-full relative overflow-x-hidden overflow-y-scroll no-scrollbar">
         <Suspense fallback={<LoadingSpinner />}>
           <Cursor />
-          {showQuote && (
-            <QuoteForm
-              setShowPopUp={setShowPopUp}
-              setPopUpMessage={setPopUpMessage}
-              setShowQuote={setShowQuote}
-            />
-          )}
-          {showPopUp && <PopUp message={popUpMessage} />}
+          {showQuote && <QuoteForm setShowQuote={() => setShowQuote(false)} />}
           {showCalendar && <Calendar setShowCalendar={setShowCalendar} />}
           {showNav && (
             <MobileNavbar setShowQuote={setShowQuote} setShowNav={setShowNav} />
@@ -70,10 +51,7 @@ function App() {
           <CTA setShowQuote={setShowQuote} />
           <Team />
           <Tools />
-          <Contact
-            setShowPopUp={setShowPopUp}
-            setPopUpMessage={setPopUpMessage}
-          />
+          <Contact />
           <Footer />
         </Suspense>
       </div>

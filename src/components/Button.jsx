@@ -11,7 +11,7 @@ export default function Button(props) {
         bounceStiffness: 800,
       }}
       onClick={props.onClick}
-      className={`${props.width} ${props.height} ${
+      className={`${props.width} ${props.height} ${props.size} ${
         props.borderColor ? props.borderColor : "border-black"
       } bg-transparent rounded-sm border  py-2 px-6`}
     >

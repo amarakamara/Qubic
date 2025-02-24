@@ -25,7 +25,7 @@ export default function CaseStudy() {
     <motion.section
       ref={caseStudyRef}
       id="case-study"
-      className="section my-20 px-6 w-full h-auto min-h-screen overflow-clip flex flex-col relative"
+      className="section my-20 px-2 w-full h-auto min-h-screen overflow-clip flex flex-col relative"
     >
       <SectionTitle
         style={{ opacity, y }}

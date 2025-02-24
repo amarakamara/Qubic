@@ -3,16 +3,26 @@ import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import BlackLogo from "../assets/blacklogo.png";
 
-const pubKey = import.meta.env.VITE_PUBLIC_KEY;
-const serviceId = import.meta.env.VITE_SERVICE_ID;
-const templateId = import.meta.env.VITE_VITE_ONBOARD_TEMPLATE_ID;
+const formUrl = import.meta.env.VITE_URL1;
 
 export default function QuoteForm(props) {
   const { setShowQuote } = props;
-  const { setShowPopUp, setPopUpMessage } = props;
 
   const handleClick = () => {
     setShowQuote(false);
+  };
+
+  const initialFormState = {
+    name: "",
+    email: "",
+    companyname: "",
+    projecttype: "",
+    projectdescription: "",
+    budgetExpectation: "",
+    timelineExpectation: "",
+    howDidYouFindUs: "",
+    favoriteDrink: "",
+    submitted: false,
   };
 
   const [formData, setFormData] = useState({
@@ -28,9 +38,11 @@ export default function QuoteForm(props) {
     submitted: false,
   });
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
-
     setFormData((prevValues) => ({
       ...prevValues,
       [name]: type === "checkbox" ? checked : value,
@@ -39,41 +51,78 @@ export default function QuoteForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = {
-      Name: formData.name,
-      Email: formData.email,
-      "Company Name": formData.companyname,
-      "Service Type": formData.projecttype,
-      "Project Description": formData.projectdescription,
-      "Budget Expectation": formData.budgetExpectation,
-      "Timeline Expectation": formData.timelineExpectation,
-      "Lead Source": formData.howDidYouFindUs,
-      "Favorite Drink": formData.favoriteDrink,
+
+    const body = {
+      sheet1: {
+        name: formData.name,
+        email: formData.email,
+        company: formData.companyname,
+        service: formData.projecttype,
+        project: formData.projectdescription,
+        budget: formData.budgetExpectation,
+        timeline: formData.timelineExpectation,
+        source: formData.howDidYouFindUs,
+        drink: formData.favoriteDrink,
+      },
     };
+
     try {
-      await fetch(
-        "https://hook.eu2.make.com/ilkplorrb4jp9wropolmm3shii7deqwm",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-      setPopUpMessage("Form Submitted");
-      setShowPopUp(true);
+      const response = await fetch(formUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData(initialFormState);
+      } else {
+        const errorData = await response.text();
+        console.error("Response error:", errorData);
+        setIsSuccess(false);
+      }
+
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
     } catch (error) {
       console.error(error);
-      setPopUpMessage("Failed");
-      setShowPopUp(true);
+      setIsSuccess(false);
+      setShowPopup(true);
+      setTimeout(() => {
+        setShowPopup(false);
+      }, 3000);
     }
+  };
+
+  const isFormValid = () => {
+    return (
+      formData.name &&
+      formData.email &&
+      formData.companyname &&
+      formData.projecttype &&
+      formData.projectdescription &&
+      formData.budgetExpectation &&
+      formData.timelineExpectation &&
+      formData.howDidYouFindUs
+    );
   };
 
   return (
     <div className="fixed w-screen lg:w-7/12 h-screen flex flex-col pt-4 bg-white text-black border shadow-sm z-50 px-4 right-0">
+      {showPopup && (
+        <div
+          className={`text-sm px-4 py-2 rounded text-center text-white ${
+            isSuccess ? "bg-black" : "bg-red-500"
+          }`}
+        >
+          {isSuccess ? "Message sent successfully!" : "Failed to send message"}
+        </div>
+      )}
       <div className="text-right border-b-[0.1px] mb-10 pb-2">
-        <button onClick={handleClick}>close</button>
+        <button onClick={handleClick}>Close</button>
       </div>
       <div className="overflow-y-scroll">
         <p className="my-3 text-sm">
@@ -186,7 +235,7 @@ export default function QuoteForm(props) {
           </div>
 
           <div className="my-5 text-left">
-            <label htmlFor="message" className="block">
+            <label htmlFor="projectdescription" className="block">
               Project Description: <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -274,6 +323,7 @@ export default function QuoteForm(props) {
             type="submit"
             value="Send"
             className="w-full text-xl bg-black text-white mt-4 mb-24 border py-2 px-6"
+            disabled={!isFormValid()}
           >
             Submit
           </button>

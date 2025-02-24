@@ -56,7 +56,7 @@ export default function Hero(props) {
             Effortless Operations and Customer Care for Service-Based
             Businesses—Powered by AI.
           </p>
-          <h1 className="text-5xl flex flex-col lg:text-6xl font-black leading-tight">
+          <h1 className="text-5xl flex flex-col lg:text-6xl font-black lg:leading-tight">
             Let AI Handle Routine Tasks—So You Can Focus on Growth
           </h1>
           <p className="py-4 font-thin my-6 max-w-lg mx-auto lg:mx-0">
@@ -68,16 +68,19 @@ export default function Hero(props) {
             <Button
               onClick={handleOpenQuote}
               borderColor="border-black"
-              name="Start Automating Now"
-              width="w-fit"
+              name="Start Automating"
+              width="w-auto"
               height="h-auto"
+              size="text-sm"
             />
 
             <Button
               onClick={handleOpenCalendar}
               borderColor="border-black"
               name="Free Consultation"
+              width="w-auto"
               height="h-auto"
+              size="text-sm"
             />
           </div>
         </div>

@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import OnboardForm from "../components/OnboardForm";
-import PopUp from "../components/PopUp";
-import Cursor from "../components/Cursor";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export default function Onboard() {
-  const [showPopUp, setShowPopUp] = useState(false);
-  const [popUpMessage, setPopUpMessage] = useState("");
-
-  useEffect(() => {
-    if (showPopUp) {
-      const timer = setTimeout(() => {
-        setShowPopUp(false);
-      }, 1500);
-      return () => clearTimeout(timer);
-    }
-  }, [showPopUp]);
-
   return (
-    <>
-      <head>
+    <HelmetProvider>
+      <Helmet>
         <title>Onboarding - Join Us Today!</title>
         <meta
           name="description"
@@ -31,16 +18,12 @@ export default function Onboard() {
           content="Welcome to the onboarding page. Complete your details and get started with our platform. We are excited to have you!"
         />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://www.yoursite.com/onboarding" />
-      </head>
+        <link rel="canonical" href="https://www.qubicpro.online/onboarding" />
+      </Helmet>
 
-      <div className="w-full h-full flex justify-center items-center py-20">
-        {showPopUp && <PopUp message={popUpMessage} />}
-        <OnboardForm
-          setShowPopUp={setShowPopUp}
-          setPopUpMessage={setPopUpMessage}
-        />
+      <div className="w-full h-full flex justify-center">
+        <OnboardForm />
       </div>
-    </>
+    </HelmetProvider>
   );
 }
